@@ -1,13 +1,14 @@
 Momentum Clone
 ==============
 
-A Chrome dashboard extension inspired by Momentum.
+A personal dashboard inspired by the Momentum Chrome Extension.
 
 ### Installation
 
 #### Clone the repository
+`git clone https://github.com/jaroldwong/momemtum-clone.git`
 
 #### Install Extension
 * Go to `chrome://extensions/`
-* Hit the `Load unpacked extension…` button
-* Navigate to the directory and hit `Select`
+* Hit `Load unpacked extension…`
+* Navigate to the unzipped directory and hit `Select`
