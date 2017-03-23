@@ -1,24 +1,45 @@
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
     background: url(https://source.unsplash.com/category/nature/1600x900/daily) center/cover no-repeat fixed;
+    font: 16px "Open Sans", sans-serif;
+    color: #fff;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .container {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
+    height: 98%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 3;
 }
 
 .center {
-    font: "Open Sans", sans-serif;
+    flex-grow: 1;
+}
+
+.center-below{
+    flex-grow: 1;
+}
+
+.bottom {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.text-center {
     text-align: center;
-    color: white;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 #clock {
@@ -27,4 +48,8 @@ body {
 
 #greeting {
     font-size: 5em;
+}
+
+#focus {
+    font-size: 2em;
 }
