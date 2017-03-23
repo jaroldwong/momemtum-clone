@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "name": "GiraffesDash",
-  "description": "Clone of the momentum Chrome Extension",
+  "description": "Personal dashboard inspired by the Momentum Chrome Extension",
   "version": "0.1",
   "background": {
-      "scripts": ["background.js"]
+      "scripts": ["dashboard.js"]
   },
   "browser_action": {
     "default_icon": "giraffe-icon-60x60.png"
