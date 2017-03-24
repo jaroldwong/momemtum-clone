@@ -15,6 +15,10 @@ function updateClock() {
         minutes = "0" + minutes;
     }
 
+    if (hours === 0) {
+        hours = 12;
+    }
+    
     if (hours > 12) {
         hours -= 12;
     }
