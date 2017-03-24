@@ -3,10 +3,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 
 var clockDisplay = document.getElementById('clock');
+var weatherDisplay = document.getElementById('weather');
+
 function updateClock() {
     var d = new Date(),
         hours = d.getHours(),
         minutes = d.getMinutes();
+
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
 
     clockDisplay.innerHTML = hours + ":" + minutes;
 }
@@ -31,9 +37,9 @@ function getWeather() {
                 var condition = data["query"]["results"]["channel"]["item"]["condition"]["text"];
 
                 var weatherString = temp + "&deg;" + "<br>" + city;
-                document.getElementById("weather").innerHTML = weatherString;
+                weatherDisplay.innerHTML = weatherString;
             } else {
-                document.getElementById("weather").innerHTML = "Location Error";
+                weatherDisplay.innerHTML = "Location Error";
             }
         }
 
