@@ -10,5 +10,6 @@ A personal dashboard inspired by the Momentum Chrome Extension.
 
 #### Install Extension
 * Go to `chrome://extensions/`
-* Hit `Load unpacked extension…`
-* Navigate to the unzipped directory and hit `Select`
+* Check `Developer mode`
+* Click on `Load unpacked extension…`
+* Navigate to the unzipped directory and click `Select`
