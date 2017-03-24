@@ -7,7 +7,7 @@ body {
     background: url(https://source.unsplash.com/category/nature/1600x900/daily) center/cover no-repeat fixed;
     font: 16px "Open Sans", sans-serif;
     color: #fff;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .container {
