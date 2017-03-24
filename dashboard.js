@@ -4,6 +4,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 var clockDisplay = document.getElementById('clock');
 var weatherDisplay = document.getElementById('weather');
+var quoteDisplay = document.getElementById('quote');
 
 function updateClock() {
     var d = new Date(),
@@ -31,27 +32,46 @@ function getWeather() {
         // JSON request
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
-        
+        request.send();
+
         request.onload = function() {
-            if (request.readyState == 4 && request.status == 200) {
+            if (request.readyState === 4 && request.status === 200) {
                 var data = JSON.parse(request.responseText);
-
-                var city = data["query"]["results"]["channel"]["location"]["city"];
-                var temp = data["query"]["results"]["channel"]["item"]["condition"]["temp"];
-                var condition = data["query"]["results"]["channel"]["item"]["condition"]["text"];
-
+                var city = data.query.results.channel.location.city;
+                var temp = data.query.results.channel.item.condition.temp;
+                var condition = data.query.results.channel.item.condition.text;
                 var weatherString = temp + "&deg;" + "<br>" + city;
+
                 weatherDisplay.innerHTML = weatherString;
             } else {
                 weatherDisplay.innerHTML = "Location Error";
             }
-        }
-
-        request.send();
+        };
     });
+}
+
+function getQuote() {
+    var url = "http://quotes.rest/qod.json?category=inspire";
+
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.send();
+
+    request.onload = function() {
+        if (request.readyState === 4 && request.status === 200) {
+            var data = JSON.parse(request.responseText);
+            var quote = data.contents.quotes[0].quote;
+            var author = data.contents.quotes[0].author;
+            
+            quoteDisplay.innerHTML = "\"" + quote + "\"";
+        } else {
+            quoteDisplay.innerHTML = "Quote Error";
+        }
+    };
 }
 
 window.onload = function() {
     updateClock();
     getWeather();
-}
+    getQuote();
+};
